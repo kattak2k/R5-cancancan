@@ -3,7 +3,8 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+
+##Description:
 
 The demo application will present users with a list of projects, both ongoing and finished. Users with different roles will have different level of access:
 
@@ -13,7 +14,8 @@ Moderators will have access to all projects with the ability to edit the ongoing
 Admins will have full access.
 
 * Ruby version
-rails 5.0.2 ruby 2.3.3
+ 1. rails 5.0.2 
+ 2. ruby 2.3.3
 * System dependencies
 
 * Configuration

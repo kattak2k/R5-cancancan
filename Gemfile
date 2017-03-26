@@ -55,4 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ##Ins Start RK01
 gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
+gem 'cancancan'
 ##Ins End RK01

@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+
   before_action :load_projects, only: :index
 
   load_and_authorize_resource

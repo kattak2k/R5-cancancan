@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
-  
   before_action :load_projects, only: :index
-  
+
   load_and_authorize_resource
 
   # def index
@@ -14,29 +13,28 @@ class ProjectsController < ApplicationController
   #   authorize! :new, @project
   # end
 
- def create
+  def create
     if @project.save
       flash[:success] = 'Project was saved!'
       redirect_to root_path
     else
       render 'new'
     end
-  end
+   end
 
-#   def edit
-#   @project = Project.find(params[:id])
-#   authorize! :edit, @project
-# end
+  #   def edit
+  #   @project = Project.find(params[:id])
+  #   authorize! :edit, @project
+  # end
 
-
-def update
+  def update
     if @project.update_attributes(project_params)
       flash[:success] = 'Project was updated!'
       redirect_to root_path
     else
       render 'edit'
     end
-  end
+    end
 
   def destroy
     if @project.destroy
@@ -50,10 +48,10 @@ def update
   private
 
   def project_params
-    params.require(:project).permit(:title)
-  end
+    params.require(:project).permit(:title, :ongoing)
+ end
 
   def load_projects
-  @projects = Project.accessible_by(current_ability).order('created_at DESC')
+    @projects = Project.accessible_by(current_ability).order('created_at DESC')
 end
 end

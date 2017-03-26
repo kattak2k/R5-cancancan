@@ -7,9 +7,10 @@ class Ability
     if user.role?(:admin)
       can :manage, :all
     elsif user.role?(:moderator)
-      can [:create, :read, :update], Project
+      can [:create, :read], Project
+      can :update, Project { |project|  project.ongoing? } 
     elsif user.role?(:user)
-      can :read, Project
+      can :read, Project, ongoing: true
     end
 
     # Define abilities for the passed in user here. For example:

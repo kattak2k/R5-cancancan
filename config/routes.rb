@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'projects/index'
+
   #Sessions controller to set roles
   resources :sessions, only: [:update]
+  resources :projects
   
   get 'sessions/update'
 

@@ -8,7 +8,9 @@ class Ability
       can :manage, :all
     elsif user.role?(:moderator)
       can [:create, :read], Project
-      can :update, Project { |project|  project.ongoing? } 
+      can :update, Project do
+         |project|  project.ongoing? 
+      end   
     elsif user.role?(:user)
       can :read, Project, ongoing: true
     end
